@@ -11,3 +11,24 @@ model User {
   email String @unique
   name  String
 }
+
+model Subscriber {
+  id            Int         @id @default(autoincrement())
+  email         String      @unique
+  createdAt     DateTime    @default(now())
+  fingerprintId Int
+  fingerprint   Fingerprint @relation(fields: [fingerprintId], references: [id])
+}
+
+model Fingerprint {
+  id                Int          @id @default(autoincrement())
+  screenResolution  String
+  colorDepth        String
+  generatedUsername String
+  timezone          String
+  language          String
+  ipAddress         String
+  userAgent         String
+  createdAt         DateTime     @default(now())
+  subscribers       Subscriber[]
+}

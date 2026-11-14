@@ -1,1 +1,1 @@
-That project in like kinda progress so don't look at it ok
+That project in like kinda progress so don't look at it oks

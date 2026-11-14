@@ -32,3 +32,9 @@ model Fingerprint {
   createdAt         DateTime     @default(now())
   subscribers       Subscriber[]
 }
+
+model Settings {
+  id                    Int    @id @default(1)
+  password              String
+  welcomeEmailTemplate  String
+}
